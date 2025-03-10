@@ -1,0 +1,39 @@
+
+
+
+
+<div class="container">
+  <button mat-raised-button color="primary" (click)="openAddCourseModal()" class="add-course-btn">+ הוסף קורס</button>
+  
+  <ul class="courses-list">
+    @for(course of courses; track course.idcourse){
+      <div class="course-card">
+        <strong>{{ course.title }}</strong>
+        <p>{{ course.description }}</p>
+        <div class="course-actions">
+          <button mat-button (click)="editCourse(course)">edit</button>
+          <button mat-button (click)="deleteCourse(course.id)">delete</button>
+          <button mat-button (click)="manageLessons(course.id)"> show course</button>
+        </div>
+      </div>
+      }
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

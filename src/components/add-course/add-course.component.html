@@ -1,0 +1,36 @@
+<!-- <form [formGroup]="courseForm" (ngSubmit)="editingCourse ? updateCourse() : addCourse()">
+    <label>כותרת קורס:</label>
+    <input type="text" formControlName="title">
+    <label>תיאור:</label>
+    <textarea formControlName="description"></textarea>
+    <button type="submit" [disabled]="!courseForm.valid">
+      {{ editingCourse ? 'עדכן קורס' : 'הוסף קורס' }}
+    </button>
+  
+</form> -->
+
+
+
+<h2 mat-dialog-title>הוסף קורס חדש</h2>
+
+<div mat-dialog-content>
+  <form [formGroup]="courseForm" (ngSubmit)="editingCourse ? updateCourse() : addCourse()">
+    <mat-form-field appearance="outline">
+      <mat-label>כותרת קורס</mat-label>
+      <input matInput type="text" formControlName="title">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>תיאור</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+
+    <div mat-dialog-actions align="end">
+      <button mat-button type="button" (click)="close()">ביטול</button>
+      <button mat-flat-button color="primary" type="submit" [disabled]="!courseForm.valid">
+        {{ editingCourse ? 'עדכן קורס' : 'הוסף קורס' }}
+      </button>
+    </div>
+  </form>
+</div>
+

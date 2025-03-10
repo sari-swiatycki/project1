@@ -1,0 +1,100 @@
+<!-- <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" formControlName="name" />
+    </div>
+  
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" formControlName="email" />
+    </div>
+  
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" formControlName="password" />
+    </div>
+  
+    <div>
+      <label for="role">Role:</label>
+      <select id="role" formControlName="role">
+        <option value="student">Student</option>
+        <option value="teacher">Teacher</option>
+        <option value="admin">Admin</option>
+      </select>
+    </div>  
+    <button type="submit" [disabled]="!registerForm.valid">Register</button>
+  </form>
+   -->
+
+<!-- 
+   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Full Name</mat-label>
+      <input matInput type="text" id="name" formControlName="name" />
+    </mat-form-field>
+  
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" id="email" formControlName="email" />
+    </mat-form-field>
+  
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" id="password" formControlName="password" />
+    </mat-form-field>
+  
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Role</mat-label>
+      <mat-select id="role" formControlName="role">
+        <mat-option value="student">Student</mat-option>
+        <mat-option value="teacher">Teacher</mat-option>
+        <mat-option value="admin">Admin</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.valid">
+      Register
+    </button>
+  </form>
+   -->
+
+
+
+
+
+   <div class="login-container">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">   
+      <mat-form-field appearance="fill">
+        <mat-label>Full Name</mat-label>
+        <mat-icon matPrefix>person</mat-icon>
+        <input matInput type="text" id="name" formControlName="name" required />
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <mat-icon matPrefix>email</mat-icon>
+        <input matInput type="email" id="email" formControlName="email" required />
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <mat-icon matPrefix>lock</mat-icon>
+        <input matInput type="password" id="password" formControlName="password" required />
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Role</mat-label>
+        <mat-icon matPrefix>supervisor_account</mat-icon>
+        <mat-select id="role" formControlName="role" required>
+          <mat-option value="student">Student</mat-option>
+          <mat-option value="teacher">Teacher</mat-option>
+          <mat-option value="admin">Admin</mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <button mat-raised-button type="submit" [disabled]="!registerForm.valid">
+        <mat-icon>how_to_reg</mat-icon> Register
+      </button>
+    </form>
+  </div>
+  

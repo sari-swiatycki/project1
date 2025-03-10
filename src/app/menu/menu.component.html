@@ -1,0 +1,27 @@
+<!-- 
+<mat-toolbar color="primary">
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/courses" routerLinkActive="buttonactive" >courses</button>
+      <button mat-menu-item routerLink="/manage-courses" routerLinkActive="buttonactive" >manage courses</button>
+   </mat-menu>
+  </mat-toolbar>
+  
+  <router-outlet></router-outlet> -->
+
+  <mat-toolbar color="primary" class="custom-toolbar">
+    <button mat-button routerLink="/courses" routerLinkActive="buttonactive" class="menu-button">
+      <mat-icon class="menu-icon">library_books</mat-icon>
+      Courses
+    </button>
+    
+    <button mat-button routerLink="/manage-courses" routerLinkActive="buttonactive" class="menu-button">
+      <mat-icon class="menu-icon">settings</mat-icon>
+      Manage Courses
+    </button>
+  </mat-toolbar>
+  
+  <!-- רכיב שמציג את תוכן הדפים -->
+  <router-outlet></router-outlet>
+  

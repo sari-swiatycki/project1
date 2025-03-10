@@ -1,0 +1,95 @@
+<!-- 
+
+
+<h3>courses</h3>
+<ul>
+  @for(course of courses; track course.idcourse){
+
+    <a [routerLink]="['/manage-lessons', course.id]">
+      <h3>{{ course.title }}</h3>
+      <p>{{ course.description }}</p>
+    </a>
+
+
+
+    @if(isStudent){
+    @if(!isEnoled(course.id))
+    {
+    <button (click)="join(course.id)">
+      Enroll
+    </button>
+    } @else{
+    <button (click)="leave(course.id)">
+      Unenroll
+    </button>
+    }
+    
+
+}
+
+
+  }
+</ul> -->
+
+
+
+
+
+
+
+
+<!-- 
+<h3 class="courses-title">Courses</h3>
+<ul class="courses-list">
+  @for(course of courses; track course.idcourse){
+
+  <a [routerLink]="['/manage-lessons', course.id]" class="course-link">
+    <div class="course-card">
+      <h3>{{ course.title }}</h3>
+      <p>{{ course.description }}</p>
+    </div>
+  </a>
+
+  @if(isStudent){
+
+  @if(!isEnoled(course.id)){
+  <button mat-raised-button color="accent" (click)="join(course.id)" class="enroll-btn">
+    <mat-icon>school</mat-icon> Enroll
+  </button>
+  }
+  @else{
+  <button mat-raised-button color="warn" (click)="leave(course.id)" class="unenroll-btn">
+    <mat-icon>remove_circle_outline</mat-icon> Unenroll
+  </button>
+  }
+  }
+} 
+</ul>  -->
+
+
+<h3 class="courses-title">Courses</h3>
+<div class="grid-container">
+  @for(course of courses; track course.idcourse){
+
+  <div class="course-card">
+    <a [routerLink]="['/manage-lessons', course.id]" class="course-link">
+      <h3>{{ course.title }}</h3>
+      <p>{{ course.description }}</p>
+    </a>
+
+    @if(isStudent){
+      @if(!isEnoled(course.id)){
+      <button mat-raised-button color="accent" (click)="join(course.id)" class="enroll-btn">
+        <mat-icon>school</mat-icon> Enroll
+      </button>
+      }
+      @else{
+      <button mat-raised-button color="warn" (click)="leave(course.id)" class="unenroll-btn">
+        <mat-icon>remove_circle_outline</mat-icon> Unenroll
+      </button>
+      }
+    }
+  </div>
+
+  }
+</div>

@@ -1,0 +1,8 @@
+{
+  "routes": [
+    "/",
+    "/courses",
+    "/manage-courses",
+    "/menu"
+  ]
+}

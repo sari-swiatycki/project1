@@ -1,0 +1,81 @@
+ <!-- <p>manage-lessons works!</p>
+
+
+
+<h2>ניהול שיעורים</h2>
+
+<form [formGroup]="lessonForm" (ngSubmit)="editingLesson ? updateLesson() : addLesson()">
+  <label>כותרת השיעור:</label>
+  <input type="text" formControlName="title">
+  
+  <label>תוכן השיעור:</label>
+  <textarea formControlName="content"></textarea>
+
+  <button type="submit" [disabled]="!lessonForm.valid">
+    {{ editingLesson ? 'עדכן שיעור' : 'הוסף שיעור' }}
+  </button>
+</form>
+
+
+
+@for(lesson of lessons; track lesson.idlesson){
+      <strong>{{ lesson.title }}</strong> - {{ lesson.content }}
+      <button (click)="editLesson(lesson, selectedCourseId)">ערוך</button>
+
+      <button (click)="deleteLesson(selectedCourseId,lesson.id)">מחק</button>
+
+  } 
+  -->
+
+
+
+
+<!-- טופס להוספת/עדכון שיעור -->
+ @if(isStudent=='teacher')
+ {
+<div class="form-container">
+  <form [formGroup]="lessonForm" (ngSubmit)="editingLesson ? updateLesson() : addLesson()">
+    <div class="card">
+      <mat-icon class="icon">edit</mat-icon>
+      <label>כותרת השיעור:</label>
+      <input type="text" formControlName="title">
+    
+      <label>תוכן השיעור:</label>
+      <textarea formControlName="content"></textarea>
+
+      <button type="submit" [disabled]="!lessonForm.valid">
+        {{ editingLesson ? 'עדכן שיעור' : 'הוסף שיעור' }}
+      </button>
+    </div>
+  </form>
+</div>
+ }
+
+<!-- הצגת שיעורים ככרטיסים -->
+<div class="lessons-container">
+  @for(lesson of lessons; track lesson.idlesson){
+    <div class="lesson-card">
+      <mat-icon class="lesson-icon">book</mat-icon>
+      <div class="lesson-content">
+        <strong>{{ lesson.title }}</strong> - {{ lesson.content }}
+      </div>
+      <div class="lesson-actions">
+        @if(isStudent=='teacher'){
+        <button (click)="editLesson(lesson, selectedCourseId)">ערוך</button>
+        <button (click)="deleteLesson(selectedCourseId, lesson.id)">מחק</button>
+        }
+      </div>
+    </div>
+  }
+</div>
+
+
+
+ 
+
+
+
+
+
+
+
